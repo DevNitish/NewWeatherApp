@@ -1,18 +1,14 @@
 import {FETCH_CITIES} from "./type"
 import axios from "axios";
 
-let fetchURL="https://api.openweathermap.org/data/2.5/forecast";
+// let fetchURL="https://api.openweathermap.org/data/2.5/forecast";
+let fetchURL="https://www.mocky.io/v2/5e89f72e310000a5a8d39f2b";
 
 export const fetchCities=(q)=>dispatch=>{
 
-  axios.get(fetchURL,{
-    params:{
-            q:"Delhi"||q,
-            APPID:"fc58ba73fc193a3d2fdf7f1e0f35d074",
-            units:"metric",
-         }
-  })
+  axios.get(fetchURL)
   .then(res=>{
+    console.log("fetch called: ",res.data)
     dispatch({
       type:FETCH_CITIES,
       payload:res.data
