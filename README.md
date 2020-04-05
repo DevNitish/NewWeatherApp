@@ -1,2 +1,0 @@
-# NewWeatherApp
-Created with CodeSandbox
